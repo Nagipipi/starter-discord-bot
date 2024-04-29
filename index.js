@@ -35,11 +35,13 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
   if (interaction.type === InteractionType.APPLICATION_COMMAND) {
     console.log(interaction.data.name)
     if(interaction.data.name == 'survivor'){
-      const survivors = '弁護士'
+      const survivors = ['庭師','医師','弁護士']
+      const randomIndex = Math.floor(Math.random() * survivors.length);
+      const result =
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: survivors,
+          content: `${result}`,
         },
       });
     }
