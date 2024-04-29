@@ -114,11 +114,13 @@ app.get('/register_commands', async (req,res) =>{
       "description": "ハンターをランダムで1人選びます",
       "options": []
     }
+/*
     {
       "name": "skill",
       "description": "補助特質をランダムで1つ選びます",
       "options": []
     }
+*/
   ]
   try
   {
