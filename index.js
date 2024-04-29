@@ -47,7 +47,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
     }
 
     if(interaction.data.name == 'hunter'){
-      const hunters = ['復讐者']
+      const hunters = ['復讐者','道化師','断罪狩人','リッパー','結魂者','芸者','白黒無常','写真家','狂眼','黄衣の王','夢の魔女','泣き虫','魔トカゲ','血の女王','ガードNo.26','｢使徒｣','ヴァイオリニスト','彫刻師','｢アンデッド｣','破輪','漁師','蝋人形師','｢悪夢｣','書記官','隠者','夜の番人','オペラ歌手','｢フールズ・ゴールド｣','時空の影']
       const randomIndex = Math.floor(Math.random() * hunters.length);
       const hunterresult = hunters[randomIndex];
       return res.send({
