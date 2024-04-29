@@ -58,14 +58,14 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
       });
     }
 
-    if(interaction.data.name == 'toku'){
-      const tokus = ['リッスン','巡視者','監視者','瞬間移動','神出鬼没','異常','興奮','移形']
-      const randomIndex = Math.floor(Math.random() * tokus.length);
-      const tokuresult = tokus[randomIndex];
+    if(interaction.data.name == 'skill'){
+      const skills = ['リッスン','巡視者','監視者','瞬間移動','神出鬼没','異常','興奮','移形']
+      const randomIndex = Math.floor(Math.random() * skills.length);
+      const skillresult = skills[randomIndex];
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `${tokuresult}`,
+          content: `${skillresult}`,
         },
       });
     }
@@ -112,6 +112,11 @@ app.get('/register_commands', async (req,res) =>{
     {
       "name": "hunter",
       "description": "ハンターをランダムで1人選びます",
+      "options": []
+    }
+    {
+      "name": "skill",
+      "description": "補助特質をランダムで1つ選びます",
       "options": []
     }
   ]
