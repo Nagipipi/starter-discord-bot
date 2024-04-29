@@ -58,6 +58,18 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
       });
     }
 
+    if(interaction.data.name == 'toku'){
+      const tokus = ['リッスン','巡視者','監視者','瞬間移動','神出鬼没','異常','興奮','移形']
+      const randomIndex = Math.floor(Math.random() * tokus.length);
+      const tokuresult = tokus[randomIndex];
+      return res.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: `${tokuresult}`,
+        },
+      });
+    }
+
 /*
     if(interaction.data.name == 'dm'){
       // https://discord.com/developers/docs/resources/user#create-dm
