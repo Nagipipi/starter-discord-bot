@@ -34,11 +34,11 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
 
   if (interaction.type === InteractionType.APPLICATION_COMMAND) {
     console.log(interaction.data.name)
-    if(interaction.data.name == 'yo'){
+    if(interaction.data.name == 'survivor'){
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `Yo!`,
+          content: `庭師`,
         },
       });
     }
@@ -78,13 +78,13 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
 app.get('/register_commands', async (req,res) =>{
   let slash_commands = [
     {
-      "name": "yo",
-      "description": "replies with Yo!",
+      "name": "survivor",
+      "description": "サバイバーをランダムで1人選びます",
       "options": []
     },
     {
-      "name": "dm",
-      "description": "sends user a DM",
+      "name": "hunter",
+      "description": "ハンターをランダムで1人選びます",
       "options": []
     }
   ]
