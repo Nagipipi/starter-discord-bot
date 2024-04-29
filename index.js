@@ -35,7 +35,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
   if (interaction.type === InteractionType.APPLICATION_COMMAND) {
     console.log(interaction.data.name)
     if(interaction.data.name == 'survivor'){
-      const survivors = ['庭師[エマ]','医師[エミリー]','弁護士']
+      const survivors = ['医師','弁護士','泥棒','庭師','マジシャン','冒険家','傭兵','空軍','祭司','機械技師','オフェンス','心眼','調香師','カウボーイ','踊り子','占い師','納棺師','探鉱者','呪術師','野人','曲芸師','一等航海士','バーメイド','ポストマン','墓守','｢囚人｣','昆虫学者','画家','バッツマン','玩具職人','患者','｢心理学者｣','小説家','｢少女｣','泣きピエロ','教授','骨董商','作曲家','記者','航空エンジニア','応援団','人形師','幸運児']
       const randomIndex = Math.floor(Math.random() * survivors.length);
       const result = survivors[randomIndex];
       return res.send({
